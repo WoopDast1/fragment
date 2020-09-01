@@ -98,31 +98,34 @@ function GenerateContentList() {
   var nodes = $('#cnblogs_post_body :header')
 
   var content = '<a name="_labelTop"></a>'
-  content += '<div id="navCategory">'
-  content += '<blockquote><p style="font-size: 18pt; color:#a2b4ba"><b>目录</b></p>'
-  content += '<div>'
 
-  for (var i = 0; i < nodes.length; i++) {
-    var item = ''
-    var originTitle = $(nodes[i]).text()
-    var resolvedTitle = resolveTitle(originTitle)
+  //去除 自动生成 目录 效果
+  // content += '<div id="navCategory">'
+  // content += '<blockquote><p style="font-size: 18pt; color:#a2b4ba"><b>目录</b></p>'
+  // content += '<div>'
 
-    if (nodes[i].tagName === 'H1') {
-      item = '<a style="font-size:18px" href="#' + resolvedTitle + '">' + $(nodes[i]).text() + '</a><br>'
-    } else if (nodes[i].tagName === 'H2') {
-      item = '<a style="font-size:16px" href="#' + resolvedTitle + '">&emsp;&emsp;' + $(nodes[i]).text() + '</a><br>'
-    }
+  // for (var i = 0; i < nodes.length; i++) {
+  //   var item = ''
+  //   var originTitle = $(nodes[i]).text()
+  //   var resolvedTitle = resolveTitle(originTitle)
 
-    content += item
-  }
-  content += '</blockquote></div>'
+  //   if (nodes[i].tagName === 'H1') {
+  //     item = '<a style="font-size:18px" href="#' + resolvedTitle + '">' + $(nodes[i]).text() + '</a><br>'
+  //   } else if (nodes[i].tagName === 'H2') {
+  //     item = '<a style="font-size:16px" href="#' + resolvedTitle + '">&emsp;&emsp;' + $(nodes[i]).text() + '</a><br>'
+  //   }
+
+  //   content += item
+  // }
+
+  // content += '</blockquote></div>'
   var len = $('#cnblogs_post_body').length
   if ($('#cnblogs_post_body').length != 0) {
     $($('#cnblogs_post_body')[0]).prepend(content)
   }
 
   $($('#cnblogs_post_body')[len - 1])
-  .append('<div id=\'signature\'><p>作者：<a href=\'http://www.cnblogs.com/jingmoxukong/\'>静默虚空</a></br>欢迎任何形式的转载，但请务必注明出处。</br>限于本人水平，如果文章和代码有表述不当之处，还请不吝赐教。</p></div>')
+  .append('<div id=\'signature\'><p>作者：<a href=\'http://www.cnblogs.com/Dast1/\'>Dast1</a></br>欢迎任何形式的转载，但请务必注明出处。</br>限于本人水平，如果文章和代码有表述不当之处，还请不吝赐教。</p></div>')
 }
 
 /*************************************************************************************
